@@ -27,18 +27,8 @@ Because this site uses **Jekyll** (Liquid templates and Markdown), the "Live Ser
 You must have **Ruby** installed on your computer.
 
 ### Steps to Run:
-1.  **Open Terminal:** Open the terminal inside VS Code (`Ctrl + ~` or `Cmd + ~`).
-2.  **Install Dependencies (First time only):** 
-    Run this command to make sure all required plugins are installed:
-    ```bash
-    bundle install
-    ```
-3.  **Start the Server:**
-    Run the following command:
-    ```bash
-    bundle exec jekyll serve
-    ```
-4.  **View your site:**
-    Open your browser and go to: `http://127.0.0.1:4000`
 
-*Note: The terminal will automatically detect when you save a file and refresh the site for you!*
+#### 1. Initial Setup (First time only)
+Open your terminal inside VS Code and run:
+```bash
+bundle install
