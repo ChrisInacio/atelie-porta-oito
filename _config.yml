@@ -1,0 +1,12 @@
+# 1. Site Metadata (Used in {{ site.title }} and {{ site.description }})
+title: My Awesome Product Shop
+description: A collection of cool things I found online.
+
+# 2. The Collection Setup (This is what makes the loop work)
+collections:
+  products:
+    output: true
+
+# 3. Optional: Tells Jekyll how to handle URLs
+url: "https://yourusername.github.io"
+baseurl: "" 

@@ -1,17 +1,45 @@
+---
+layout: null
+---
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-    <h1>Product Catalog</h1>
-    <!-- This is where the cards will appear -->
-    <div id="card-container" class="grid-container"></div>
 
-    <!-- This could lead to the file not being loaded -->
-    <!-- <script src="script.js"></script> -->
-     
-    <script src="./script.js"></script>
+    <header>
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+    </header>
+
+    <main class="grid-container">
+        {% comment %} 
+            This is the Jekyll Loop. 
+            It looks into your '_products' folder and loops through every file.
+        {% endcomment %}
+        
+        {% for product in site.products %}
+            <div class="card">
+                <!-- We pull the image path from the 'image' variable in the Markdown file -->
+                <img src="{{ product.image | relative_url }}" alt="{{ product.title }}">
+                
+                <h2>{{ product.title }}</h2>
+                <p class="description">{{ product.description }}</p>
+                
+                <p class="price">{{ product.price }}</p>
+                
+                <a href="{{ product.instagram | relative_url }}" target="_blank" class="btn">
+                    View on Instagram
+                </a>
+            </div>
+        {% else %}
+            <p>No products found. Add some .md files to the _products folder!</p>
+        {% endfor %}
+    </main>
+
 </body>
 </html>
