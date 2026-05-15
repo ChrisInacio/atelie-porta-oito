@@ -8,5 +8,6 @@ collections:
     output: true
 
 # 3. Optional: Tells Jekyll how to handle URLs
-url: "https://yourusername.github.io"
-baseurl: "" 
+url: "https://chrisinacio.github.io"
+#baseurl: "https://chrisinacio.github.io/atelie-porta-oito"
+baseurl: "/atelie-porta-oito"

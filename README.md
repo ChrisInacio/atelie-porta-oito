@@ -22,6 +22,12 @@ With this Jekyll setup, you **do not** need to edit any JavaScript files! To add
 ## 💻 Running the site locally (Development)
 Because this site uses **Jekyll** (Liquid templates and Markdown), **Ruby** must be installed on your computer.
 
+### First steps after installing ruby 3.3:
+1. Run:
+   ```bash
+   gem install bundler
+   ```
+
 ### Steps to Run:
 1. Open the project in **VS Code**.
 2. Open the VS Code terminal/CLI.
@@ -29,13 +35,27 @@ Because this site uses **Jekyll** (Liquid templates and Markdown), **Ruby** must
    ```bash
    jekyll serve
    ```
-   or, if your project uses Bundler:
+   or, to generate a local preview with a clean baseurl:
+   ```bash
+   bundle exec jekyll serve --baseurl=""
+   ```
+   or....
    ```bash
    bundle exec jekyll serve
    ```
 4. Open the local site in your browser, usually at:
    ```bash
    http://localhost:4000
+   ```
+
+### If any changes are mad to Gemfile:
+1. Run:
+   ```bash
+   bundle install
+   ```
+1. Run:
+   ```bash
+   bundle exec jekyll serve
    ```
 
 ### VS Code build option
