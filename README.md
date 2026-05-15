@@ -33,20 +33,21 @@ Because this site uses **Jekyll** (Liquid templates and Markdown), **Ruby** must
 2. Open the VS Code terminal/CLI.
 3. Run:
    ```bash
-   jekyll serve
+   bundle exec jekyll build
    ```
-   or, to generate a local preview with a clean baseurl:
-   ```bash
-   bundle exec jekyll serve --baseurl=""
-   ```
-   or....
+   then...
    ```bash
    bundle exec jekyll serve
    ```
 4. Open the local site in your browser, usually at:
    ```bash
-   http://localhost:4000
+   http://127.0.0.1:4000
    ```
+   or...
+   ```bash
+   http://127.0.0.1:4000/atelie-porta-oito/
+   ```
+
 
 ### If any changes are mad to Gemfile:
 1. Run:
