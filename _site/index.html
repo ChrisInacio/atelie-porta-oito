@@ -1,54 +1,131 @@
+<!-- Jekyll Front Matter: Defines page configuration -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Metadata and Site Configuration -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Awesome Product Shop</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
-
 <body>
-
     <header>
         <h1>My Awesome Product Shop</h1>
         <p>A collection of cool things I found online.</p>
     </header>
 
+    <!-- Main Content: Product Grid generated from _products/ directory -->
     <main class="grid-container">
         
-        
-        
             <div class="card">
-                <!-- We pull the image path from the 'image' variable in the Markdown file -->
-                <img src="/assets/images/sunnies.jpg" alt="Cool Sunglasses">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        
+                            <img src="/assets/images/img1.jpg" alt="Artigo 1">
+                        
+                            <img src="/assets/images/img2.jpg" alt="Artigo 1">
+                        
+                            <img src="/assets/images/img3.jpg" alt="Artigo 1">
+                        
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous">❮</button>
+                    <button class="carousel-btn next" aria-label="Next">❯</button>
+                </div>
                 
-                <h2>Cool Sunglasses</h2>
-                <p class="description">Perfect for summer days.</p>
-                
-                <p class="price">$15</p>
-                
-                <a href="https://instagram.com/example" target="_blank" class="btn">
+                <h2>Artigo 1</h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor felis vel convallis venenatis. Nam eros sem, malesuada et ornare a, tempus et mi. Integer tristique convallis mauris, suscipit faucibus tortor porta quis. Quisque id ultrices dolor, ut convallis est. Vivamus dapibus facilisis dapibus. Morbi laoreet porttitor sem, at fringilla magna.</p>
+                <p class="price">10€</p>
+                <a href="https://www.instagram.com/atelieporta8/reels" target="_blank" class="btn">
                     View on Instagram
                 </a>
             </div>
         
             <div class="card">
-                <!-- We pull the image path from the 'image' variable in the Markdown file -->
-                <img src="/assets/images/sunnies.jpg" alt="Cool Sunglasses">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        
+                            <img src="/assets/images/img2.jpg" alt="Artigo 2">
+                        
+                            <img src="/assets/images/img3.jpg" alt="Artigo 2">
+                        
+                            <img src="/assets/images/img1.jpg" alt="Artigo 2">
+                        
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous">❮</button>
+                    <button class="carousel-btn next" aria-label="Next">❯</button>
+                </div>
                 
-                <h2>Cool Sunglasses</h2>
-                <p class="description">Perfect for summer days.</p>
+                <h2>Artigo 2</h2>
+                <p class="description">Nunc diam urna, lacinia sit amet dui eu, mollis pretium enim. Vivamus eu velit nec dui auctor lacinia. Quisque ipsum ligula, efficitur ac pulvinar vitae, commodo sed mi. Nulla dictum purus ac lobortis vehicula. Fusce ultrices sem sed leo faucibus suscipit. Suspendisse pellentesque, erat faucibus maximus interdum, est lorem accumsan massa, id ultrices velit dui a neque.</p>
+                <p class="price">15€</p>
+                <a href="https://www.instagram.com/atelieporta8/reels" target="_blank" class="btn">
+                    View on Instagram
+                </a>
+            </div>
+        
+            <div class="card">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        
+                            <img src="/assets/images/img3.jpg" alt="Artigo 3">
+                        
+                            <img src="/assets/images/img1.jpg" alt="Artigo 3">
+                        
+                            <img src="/assets/images/img2.jpg" alt="Artigo 3">
+                        
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous">❮</button>
+                    <button class="carousel-btn next" aria-label="Next">❯</button>
+                </div>
                 
-                <p class="price">$15</p>
-                
-                <a href="https://instagram.com/example" target="_blank" class="btn">
+                <h2>Artigo 3</h2>
+                <p class="description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed convallis lobortis eros, et eleifend lectus viverra sit amet. Nullam sed odio et ligula vulputate aliquet. Maecenas sed nunc et sapien pretium venenatis quis non nulla. Praesent cursus nulla nec ante fringilla, quis placerat eros consectetur.</p>
+                <p class="price">20€</p>
+                <a href="https://www.instagram.com/atelieporta8/reels" target="_blank" class="btn">
                     View on Instagram
                 </a>
             </div>
         
     </main>
 
+    <!-- Client-side Logic: Image Carousel functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousels = document.querySelectorAll('.carousel');
+            
+            carousels.forEach(carousel => {
+                const track = carousel.querySelector('.carousel-track');
+                const images = track.querySelectorAll('img');
+                const prevBtn = carousel.querySelector('.prev');
+                const nextBtn = carousel.querySelector('.next');
+                let currentIndex = 0;
+                const totalImages = images.length;
+
+                function updateCarousel() {
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex === totalImages - 1;
+                }
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < totalImages - 1) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                });
+
+                updateCarousel();
+            });
+        });
+    </script>
 </body>
 </html>

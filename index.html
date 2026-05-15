@@ -1,40 +1,41 @@
 ---
 layout: null
 ---
+<!-- Jekyll Front Matter: Defines page configuration -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Metadata and Site Configuration -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
 </head>
-
 <body>
-
     <header>
         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p>
     </header>
 
+    <!-- Main Content: Product Grid generated from _products/ directory -->
     <main class="grid-container">
-        {% comment %} 
-            This is the Jekyll Loop. 
-            It looks into your '_products' folder and loops through every file.
-        {% endcomment %}
-        
         {% for product in site.products %}
             <div class="card">
-                <!-- We pull the image path from the 'image' variable in the Markdown file -->
-                <img src="{{ product.image | relative_url }}" alt="{{ product.title }}">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        {% for img in product.images %}
+                            <img src="{{ img | relative_url }}" alt="{{ product.title }}">
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous">❮</button>
+                    <button class="carousel-btn next" aria-label="Next">❯</button>
+                </div>
                 
                 <h2>{{ product.title }}</h2>
                 <p class="description">{{ product.description }}</p>
-                
                 <p class="price">{{ product.price }}</p>
-                
                 <a href="{{ product.instagram | relative_url }}" target="_blank" class="btn">
                     View on Instagram
                 </a>
@@ -44,5 +45,42 @@ layout: null
         {% endfor %}
     </main>
 
+    <!-- Client-side Logic: Image Carousel functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousels = document.querySelectorAll('.carousel');
+            
+            carousels.forEach(carousel => {
+                const track = carousel.querySelector('.carousel-track');
+                const images = track.querySelectorAll('img');
+                const prevBtn = carousel.querySelector('.prev');
+                const nextBtn = carousel.querySelector('.next');
+                let currentIndex = 0;
+                const totalImages = images.length;
+
+                function updateCarousel() {
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex === totalImages - 1;
+                }
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < totalImages - 1) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                });
+
+                updateCarousel();
+            });
+        });
+    </script>
 </body>
 </html>
