@@ -4,7 +4,7 @@
         {
             "label": "Run Jekyll",
             "type": "shell",
-            "command": "jekyll serve",
+            "command": "bundle exec jekyll serve",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
