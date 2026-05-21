@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Awesome Product Shop</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/atelie-porta-oito/assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/atelie-porta-oito/favicon.ico">
 </head>
 <body>
     <header>
@@ -20,18 +20,11 @@
     <main class="grid-container">
         
             <div class="card">
-                <div class="carousel">
-                    <div class="carousel-track">
+                <div style="position: relative; width: 100%; height: 300px;">
+                    
                         
-                            <img src="/assets/images/img1.jpg" alt="Artigo 1">
-                        
-                            <img src="/assets/images/img2.jpg" alt="Artigo 1">
-                        
-                            <img src="/assets/images/img3.jpg" alt="Artigo 1">
-                        
-                    </div>
-                    <button class="carousel-btn prev" aria-label="Previous">❮</button>
-                    <button class="carousel-btn next" aria-label="Next">❯</button>
+                        <img src="/atelie-porta-oito/assets/images/img1.jpg" alt="Artigo 1" style="width: 100%; height: 100%; object-fit: cover;">
+                    
                 </div>
                 
                 <h2>Artigo 1</h2>
@@ -43,18 +36,11 @@
             </div>
         
             <div class="card">
-                <div class="carousel">
-                    <div class="carousel-track">
+                <div style="position: relative; width: 100%; height: 300px;">
+                    
                         
-                            <img src="/assets/images/img2.jpg" alt="Artigo 2">
-                        
-                            <img src="/assets/images/img3.jpg" alt="Artigo 2">
-                        
-                            <img src="/assets/images/img1.jpg" alt="Artigo 2">
-                        
-                    </div>
-                    <button class="carousel-btn prev" aria-label="Previous">❮</button>
-                    <button class="carousel-btn next" aria-label="Next">❯</button>
+                        <img src="/atelie-porta-oito/assets/images/img2.jpg" alt="Artigo 2" style="width: 100%; height: 100%; object-fit: cover;">
+                    
                 </div>
                 
                 <h2>Artigo 2</h2>
@@ -66,18 +52,11 @@
             </div>
         
             <div class="card">
-                <div class="carousel">
-                    <div class="carousel-track">
+                <div style="position: relative; width: 100%; height: 300px;">
+                    
                         
-                            <img src="/assets/images/img3.jpg" alt="Artigo 3">
-                        
-                            <img src="/assets/images/img1.jpg" alt="Artigo 3">
-                        
-                            <img src="/assets/images/img2.jpg" alt="Artigo 3">
-                        
-                    </div>
-                    <button class="carousel-btn prev" aria-label="Previous">❮</button>
-                    <button class="carousel-btn next" aria-label="Next">❯</button>
+                        <img src="/atelie-porta-oito/assets/images/img3.jpg" alt="Artigo 3" style="width: 100%; height: 100%; object-fit: cover;">
+                    
                 </div>
                 
                 <h2>Artigo 3</h2>
@@ -90,42 +69,5 @@
         
     </main>
 
-    <!-- Client-side Logic: Image Carousel functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousels = document.querySelectorAll('.carousel');
-            
-            carousels.forEach(carousel => {
-                const track = carousel.querySelector('.carousel-track');
-                const images = track.querySelectorAll('img');
-                const prevBtn = carousel.querySelector('.prev');
-                const nextBtn = carousel.querySelector('.next');
-                let currentIndex = 0;
-                const totalImages = images.length;
-
-                function updateCarousel() {
-                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    prevBtn.disabled = currentIndex === 0;
-                    nextBtn.disabled = currentIndex === totalImages - 1;
-                }
-
-                prevBtn.addEventListener('click', () => {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        updateCarousel();
-                    }
-                });
-
-                nextBtn.addEventListener('click', () => {
-                    if (currentIndex < totalImages - 1) {
-                        currentIndex++;
-                        updateCarousel();
-                    }
-                });
-
-                updateCarousel();
-            });
-        });
-    </script>
 </body>
 </html>

@@ -5,6 +5,4 @@ price: "15€"
 instagram: "https://www.instagram.com/atelieporta8/reels"
 images: 
   - "/assets/images/img2.jpg"
-  - "/assets/images/img3.jpg"
-  - "/assets/images/img1.jpg"
 ---

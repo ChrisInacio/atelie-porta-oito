@@ -27,6 +27,10 @@ Because this site uses **Jekyll** (Liquid templates and Markdown), **Ruby** must
    ```bash
    gem install bundler
    ```
+   and...
+   ```bash
+   gem install jekyll bundler
+   ```
 
 ### Steps to Run:
 1. Open the project in **VS Code**.
