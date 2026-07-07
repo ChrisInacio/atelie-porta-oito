@@ -1,10 +1,9 @@
-# my-hello-world
-Github webpage test
+# Atelie Porta Oito
 
-## 🚀 How to add a new product/item
-With this Jekyll setup, you **do not** need to edit any JavaScript files! To add a new item:
-1. **Create a file:** Go to the `_products/` folder and create a new file (e.g., `new-item.md`).
-2. **Add Content:** Paste your product details into that file using this format:
+## 🚀 How to add a new product
+To add a new item to your collection:
+1. **Create a new file** in the `_products/` folder (e.g., `new-item.md`).
+2. **Add the content** using the following format:
    ```markdown
    ---
    title: "Your Product Name"
@@ -14,62 +13,27 @@ With this Jekyll setup, you **do not** need to edit any JavaScript files! To add
    instagram: "https://instagram.com/yourprofile"
    ---
    ```
-3. **Add Image:** Ensure your image is saved in the `assets/images/` folder.
-4. **Commit and Push:** Once you push to GitHub, the new item will automatically appear on your homepage!
+3. **Save your image** in the `assets/images/` folder.
+4. **Push your changes** to GitHub to see the new item appear automatically.
 
 ---
 
-## 💻 Running the site locally (Development)
-Because this site uses **Jekyll** (Liquid templates and Markdown), **Ruby** must be installed on your computer.
+## 💻 Local Development
+This site uses **Jekyll**, which requires **Ruby** to be installed on your machine.
 
-### First steps after installing ruby 3.3:
-1. Run:
-   ```bash
-   gem install bundler
-   ```
-   and...
-   ```bash
-   gem install jekyll bundler
-   ```
-
-### Steps to Run:
-1. Open the project in **VS Code**.
-2. Open the VS Code terminal/CLI.
-3. Run:
-   ```bash
-   bundle exec jekyll build
-   ```
-   then...
-   ```bash
-   bundle exec jekyll serve
-   ```
-4. Open the local site in your browser, usually at:
-   ```bash
-   http://127.0.0.1:4000
-   ```
-   or...
-   ```bash
-   http://127.0.0.1:4000/atelie-porta-oito/
-   ```
-
-
-### If any changes are mad to Gemfile:
-1. Run:
-   ```bash
-   bundle install
-   ```
-1. Run:
-   ```bash
-   bundle exec jekyll serve
-   ```
-
-### VS Code build option
-If you have a default build task configured in VS Code, you can also run the project by pressing:
-
-```text
-Ctrl + Shift + B
+### Setup
+First, install the necessary gems:
+```bash
+gem install bundler
+gem install jekyll bundler
+bundle install
 ```
 
-This will start the configured build task directly from VS Code.
+### Running the Server
+To start the local development server, run:
+```bash
+bundle exec jekyll serve
+```
+The site will be available at `http://127.0.0.1:4000/atelie-porta-oito/`.
 
----
+*Note: If you have a default build task configured in VS Code, you can also run it by pressing `Ctrl + Shift + B`.*

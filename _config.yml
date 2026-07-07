@@ -1,13 +1,15 @@
-# 1. Site Metadata (Used in {{ site.title }} and {{ site.description }})
+# 1. Site Metadata
 title: My Awesome Product Shop
 description: A collection of cool things I found online.
 
-# 2. The Collection Setup (This is what makes the loop work)
+# 2. The Collection Setup
 collections:
   products:
     output: true
 
-# 3. Optional: Tells Jekyll how to handle URLs
+# 3. URL Settings
+# This is the main domain
 url: "https://chrisinacio.github.io"
-#baseurl: "https://chrisinacio.github.io/atelie-porta-oito"
+
+# This is the subfolder path for your project repository
 baseurl: "/atelie-porta-oito"

@@ -1,14 +1,6 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 
-# gem "rails"
-
+# Do NOT include the standard 'gem "jekyll"' line.
+# This single line forces Bundler to grab the exact Jekyll version and 
+# whitelisted plugins that GitHub Pages uses.
 gem "github-pages", group: :jekyll_plugins
-# Explicit stdlib gems needed on newer Ruby:
-gem "csv"
-gem "bigdecimal"
-gem "json"
-gem "stringio"
-gem "date"
-gem "faraday-retry"
