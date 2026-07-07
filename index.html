@@ -24,7 +24,8 @@ layout: null
                 
                 {% if product.images %}
                     {% assign first_img = product.images | first %}
-                    <img src="{{ first_img | relative_url }}" alt="{{ product.title }}">
+                    <!-- <img src="{{ first_img | relative_url }}" alt="{{ product.title }}"> -->
+                    <img src="{{ site.baseurl }}{{ first_img }}" alt="{{ product.title }}">
                 {% endif %}
                 
                 <h2>{{ product.title }}</h2>
