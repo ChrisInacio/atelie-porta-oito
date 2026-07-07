@@ -2,44 +2,23 @@
 layout: null
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.title }}</title>
-    
+    <meta name="description" content="{{ site.description }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
 </head>
 <body>
-
     <header>
         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p>
     </header>
 
     <main>
-        {% for product in site.products %}
-            <article class="product-item">
-                
-                {% if product.images %}
-                    {% assign first_img = product.images | first %}
-                    <img src="{{ first_img | relative_url }}" alt="{{ product.title }}">
-                {% endif %}
-                
-                <h2>{{ product.title }}</h2>
-                <p>{{ product.description }}</p>
-                <span class="price">{{ product.price }}</span>
-                
-                {% if product.instagram %}
-                    <a href="{{ product.instagram }}" target="_blank">View on Instagram</a>
-                {% endif %}
-
-            </article>
-        {% else %}
-            <p>No products found. Add some markdown files to your _products folder!</p>
-        {% endfor %}
+        <!-- Content will go here -->
     </main>
-
 </body>
 </html>
